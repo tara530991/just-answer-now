@@ -1,0 +1,62 @@
+crud
+primary key
+
+新增
+add: 不管id，新增
+add(name: 'tara')
+
+-------------------------
+
+up sert:如果不存在就新增，存在就修改
+doc: document ID
+set: 
+doc('123').set(name: 'tara')
+
+eg1.
+db
+    .collection("rooms")
+    .doc("123")
+    .set({
+        name: "tara222"
+    })
+    .then(snapshot => {
+        console.log(snapshot);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+eg2.
+db
+    .collection("rooms")
+    .doc("20190620")
+    .collection('ans')
+---------------------------
+
+查詢
+where: where('name', '==', 'xxx')
+onSnapshot:沒有條件
+
+eg1.
+db.collection("rooms")
+    .where("name", "==", "tara222")
+    .onSnapshot(snapshot => { //只會建一次，因為是監聽器
+      // snapshot.docChanges() 
+      snapshot.docs.map(doc => {
+        doc.exists()
+        doc.data()
+        // console.log(doc.data())
+      })
+    });
+
+---------------------------
+
+刪除
+delete:
+.doc('tara').delete()
+
+
+---------------------------
+
+
+shift + alt + f

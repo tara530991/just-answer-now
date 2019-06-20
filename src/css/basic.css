@@ -1,0 +1,80 @@
+* {
+    font-family: "微軟正黑體", "sans-serif";
+}
+body {
+    background-color: #E0FFFF;
+}
+
+.box {
+    margin: 100px auto;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 30px auto;
+    color: #4b6269;
+    text-align: center;
+}
+.sub-title {
+    font-size: 1.5rem;
+    margin: 15px auto;
+    color: #4b6269;
+    text-align: center;    
+}
+
+.wrap-L {width: 1280px;}
+.wrap-M {width: 1100px;}
+.wrap-S {width: 960px;}
+.wrap-XS {width: 760px;}
+
+.marginV-XL {margin-top: 100px; margin-bottom: 100px;}
+.marginV-L {margin-top: 80px; margin-bottom: 80px;}
+.marginV-M {margin-top: 50px; margin-bottom: 50px;}
+.marginV-S {margin-top: 30px; margin-bottom: 30px;}
+.marginV-XS {margin-top: 15px; margin-bottom: 15px;}
+
+.marginH-XL {margin-left: 100px; margin-right: 100px;}
+.marginH-L {margin-left: 80px; margin-right: 80px;}
+.marginH-M {margin-left: 50px; margin-right: 50px;}
+.marginH-S {margin-left: 30px; margin-right: 30px;}
+.marginH-XS {margin-left: 15px; margin-right: 15px;}
+
+.btn {
+    border-style: none;
+    cursor: pointer;
+}
+.btn-radius-L{
+    border-radius: 50px; 
+}
+.btn-radius-M{
+    border-radius: 30px; 
+}
+.btn-radius-S{
+    border-radius: 15px; 
+}
+.btn-radius-XS{
+    border-radius: 10px; 
+}
+.btn-radius-2XS{
+    border-radius: 5px; 
+}
+.btn-XL {
+    padding: 20px 50px;
+    font-size: 3rem;
+}
+.btn-L {
+    padding: 15px 30px;
+    font-size: 2rem;
+}
+.btn-M {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+}
+.btn-S {
+    padding: 8px 15px;
+    font-size: 1.2rem;
+}
+.btn-XS {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
