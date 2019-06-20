@@ -1,29 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import { db } from "../App";
 
-const HomePage = ({ onPageChange }) => {
-  
+const HomePage = ({ onPageChange, onRoomIdChange }) => {
+  const [roomId, setRoomId] = useState("");
+
   return (
     <section className="box wrap-S">
-      <div>This is the home page.</div>
-      <h1 className="title">問答系統</h1>
-      <input text="房間ID："/>
-      <div style={{margin: "0 auto", width: "250px"}}>
-        <button className="btn btn-XL marginV-XS btn-radius-L" link="/lecturer">問問題</button>
-        <button className="btn btn-XL marginV-XS btn-radius-L" link="/attendee">答答題</button>
+      <h1 className="title">只能回答的系統</h1>
+      <div style={{margin: "30px auto", width: "250px"}}>
+        房間ID：
+        <input onChange={(e) => {setRoomId(e.currentTarget.value)}}/>
       </div>
-      
-      <button onClick={() => onPageChange("lecturer")}>lecturer</button>
-      <button onClick={() => onPageChange("attendee")}>attendee</button>
-      <button
-        onClick={() =>
-          console.log(11)
-        }
-        >
-      chartroom
-      </button>
+      <div style={{margin: "0 auto", width: "250px"}}>
+        <button 
+          className="btn btn-XL marginV-XS btn-radius-L" 
+          onClick={() => {
+            onPageChange("lecturer")
+            onRoomIdChange(roomId)
+            }}
+            >看結果
+            </button>
+        <button 
+          className="btn btn-XL marginV-XS btn-radius-L"
+          onClick={() => onPageChange("attendee")}
+          >答答題</button>
+      </div>
     </section>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

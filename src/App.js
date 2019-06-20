@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import HomePage from "./pages/HomePage";
 import LecturerPage from "./pages/LecturerPage";
 import AttendeePage from "./pages/AttendeePage";
-import { firestore, initializeApp } from "firebase"
+import { firestore, initializeApp } from "firebase";
 
-import './css/reset.css'
-import './css/basic.css'
+import "./css/reset.css";
+import "./css/basic.css";
 
 const App = () => {
   const [page, setPage] = useState("home");
+  const [roomId, setRoomId] = useState("");
+
   switch (page) {
     case "home":
-      return <HomePage onPageChange = {setPage}/>;
+      return <HomePage onPageChange={setPage} onRoomIdChange={setRoomId}/>;
     case "lecturer":
-      return <LecturerPage onPageChange={setPage} />;
+      return <LecturerPage onPageChange={setPage} roomId={roomId} />;
     case "attendee":
-      return <AttendeePage onPageChange={setPage}/>;
+      return <AttendeePage onPageChange={setPage} roomId={roomId} />;
     default:
       return <div>Page not found.</div>;
   }
